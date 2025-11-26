@@ -20,12 +20,12 @@ body {
     justify-content: center;
 }
 
+/* основной контейнер страницы */
 .page {
     width: 100%;
     max-width: 480px;
     min-height: 100vh;
-    /* даём большой нижний паддинг, чтобы категории не залезали под фиксированный блок */
-    padding: 12px 12px 220px;
+    padding: 12px 12px 220px; /* запас под фиксированный блок снизу */
     background: #050505;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    flex: 1;
 }
 
 /* CATEGORIES LIST */
@@ -64,8 +63,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    flex: 1;
-    min-height: 0;
+    max-height: 52vh;
     overflow-y: auto;
     padding-right: 4px;
 }
@@ -77,37 +75,38 @@ body {
     border: 1px solid #181818;
 }
 
+/* заголовок категории + подпись */
 .category-title {
     font-size: 14px;
     margin: 0 0 6px;
     color: #d0d0d0;
     display: flex;
     align-items: baseline;
-    gap: 4px;
+    gap: 6px;
 }
 
 .category-label {
     font-size: 12px;
-    color: #a98cff;
+    color: #b68cff; /* приглушённый фиолетовый */
     opacity: 0.85;
 }
 
-/* Ряд с картинками */
+/* ряд с картинками категории: горизонтальный скролл */
 
 .options-row {
     display: flex;
+    flex-direction: row;
     gap: 8px;
-    justify-content: flex-start;  /* прижимаем влево */
-    overflow-x: auto;             /* горизонтальный скролл */
+    overflow-x: auto;
     padding-bottom: 4px;
 }
 
-/* Картинки — фиксированный размер, "лежачее колесо" */
+/* сами превью-карточки */
 
 .option-image {
     flex: 0 0 auto;
     width: 100px;
-    height: 100px;
+    height: 100px;          /* жёстко 100x100 */
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #222;
@@ -130,11 +129,11 @@ body {
     opacity: 1;
 }
 
-/* OUTPUT / TEXT SECTION — ФИКСИРУЕМ СНИЗУ ЭКРАНА */
+/* OUTPUT / TEXT SECTION – фиксированный блок снизу */
 
 .output-section {
     background: #080808;
-    border-radius: 12px;
+    border-radius: 12px 12px 0 0;
     padding: 10px 10px 12px;
     border: 1px solid #181818;
     display: flex;
@@ -143,9 +142,9 @@ body {
 
     position: fixed;
     left: 50%;
-    bottom: 8px; /* слегка приподнимаем над нижней кромкой */
+    bottom: 0; /* прижимаем к низу */
     transform: translateX(-50%);
-    width: calc(100% - 24px); /* учёт боковых отступов по 12px */
+    width: calc(100% - 24px);
     max-width: 480px;
     z-index: 100;
 }
@@ -163,6 +162,7 @@ body {
     padding: 8px;
     line-height: 1.4;
     outline: none;
+    white-space: pre-wrap; /* аккуратные переносы строк */
 }
 
 .output-text:focus {
@@ -250,14 +250,15 @@ body {
     font-size: 12px;
     color: #9ad17f;
     opacity: 0;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
-    transition: opacity 0.15s ease, height 0.15s ease;
+    white-space: pre-line; /* учитываем \n внутри текста */
+    transition: opacity 0.15s ease, max-height 0.15s ease;
 }
 
 .copy-notice.visible {
     opacity: 1;
-    height: 16px;
+    max-height: 60px; /* хватит для двух строк */
 }
 
 /* SCROLLBARS (минимальные) */
