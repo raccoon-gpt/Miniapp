@@ -88,12 +88,12 @@ body {
     justify-content: space-between;
 }
 
-/* КАРТИНКИ: 70×70, расстояние (gap) не трогаем */
+/* КАРТИНКИ: 90×90, расстояние (gap) не трогаем */
 
 .option-image {
     flex: 0 0 auto;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #222;
