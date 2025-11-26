@@ -22,7 +22,7 @@ body {
 
 /* основной контейнер страницы */
 .page {
-    width: 100%;
+    width: 80%;
     max-width: 480px;
     min-height: 100vh;
     padding: 12px 12px 220px; /* запас под фиксированный блок снизу */
