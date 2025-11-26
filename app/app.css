@@ -132,7 +132,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    width: 80%;
+    width: 94%;
     max-width: 480px;
     z-index: 20;
     box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.8);
@@ -170,8 +170,8 @@ body {
 
 .selected-thumb {
     flex: 0 0 auto;
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     border-radius: 8px;
     border: 1px solid #262626;
     overflow: hidden;
