@@ -24,7 +24,8 @@ body {
     width: 100%;
     max-width: 480px;
     min-height: 100vh;
-    padding: 12px 12px 16px;
+    /* даём большой нижний паддинг, чтобы категории не залезали под фиксированный блок */
+    padding: 12px 12px 220px;
     background: #050505;
     display: flex;
     flex-direction: column;
@@ -54,6 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 1;
 }
 
 /* CATEGORIES LIST */
@@ -62,7 +64,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 52vh;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     padding-right: 4px;
 }
@@ -127,10 +130,9 @@ body {
     opacity: 1;
 }
 
-/* OUTPUT / TEXT SECTION */
+/* OUTPUT / TEXT SECTION — ФИКСИРУЕМ СНИЗУ ЭКРАНА */
 
 .output-section {
-    margin-top: 4px;
     background: #080808;
     border-radius: 12px;
     padding: 10px 10px 12px;
@@ -138,6 +140,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    position: fixed;
+    left: 50%;
+    bottom: 8px; /* слегка приподнимаем над нижней кромкой */
+    transform: translateX(-50%);
+    width: calc(100% - 24px); /* учёт боковых отступов по 12px */
+    max-width: 480px;
+    z-index: 100;
 }
 
 .output-text {
