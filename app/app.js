@@ -147,12 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 await navigator.clipboard.writeText(text);
 
                 if (copyNotice) {
-                    copyNotice.textContent = 'Скопировано в буфер.<br>Теперь открывай свой GPT и отправляй в чат.';
+                    copyNotice.textContent = 'Скопировано в буфер. Теперь открывай свой GPT и отправляй в чат.';
                     copyNotice.classList.add('visible');
 
                     setTimeout(() => {
                         copyNotice.classList.remove('visible');
-                    }, 7000);
+                    }, 12000);
                 }
             } catch (e) {
                 console.error('Clipboard error:', e);
