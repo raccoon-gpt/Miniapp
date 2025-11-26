@@ -22,7 +22,7 @@ body {
 
 /* основной контейнер страницы */
 .page {
-    width: 80%;
+    width: 100%;
     max-width: 480px;
     min-height: 100vh;
     padding: 12px 12px 220px; /* запас под фиксированный блок снизу */
@@ -105,8 +105,8 @@ body {
 
 .option-image {
     flex: 0 0 auto;
-    width: 100px;
-    height: 100px;          /* жёстко 100x100 */
+    width: 80px;
+    height: 80px;          /* жёстко 100x100 */
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #222;
