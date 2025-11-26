@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Builder</title>
 
+    <!-- Стили для экрана (отдельный файл подключим позже) -->
+    <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="title">Prompt Builder</h1>
+            <p class="subtitle">
+                Выбирай по одной картинке из каждой категории и собирай готовый промпт.
+            </p>
+        </header>
+
+        <main class="main">
+            <!-- БЛОК С КАТЕГОРИЯМИ -->
+            <section class="categories">
+
+                <!-- Художественный стиль -->
+                <section class="category">
+                    <h2 class="category-title">Художественный стиль</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/style/style_001.png"
+                            alt="style 001"
+                            data-category="style"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/style/style_002.png"
+                            alt="style 002"
+                            data-category="style"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/style/style_003.png"
+                            alt="style 003"
+                            data-category="style"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Настроение -->
+                <section class="category">
+                    <h2 class="category-title">Настроение</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/mood/mood_001.png"
+                            alt="mood 001"
+                            data-category="mood"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/mood/mood_002.png"
+                            alt="mood 002"
+                            data-category="mood"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/mood/mood_003.png"
+                            alt="mood 003"
+                            data-category="mood"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Положение головы -->
+                <section class="category">
+                    <h2 class="category-title">Положение головы</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/head/head_001.png"
+                            alt="head 001"
+                            data-category="head"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/head/head_002.png"
+                            alt="head 002"
+                            data-category="head"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/head/head_003.png"
+                            alt="head 003"
+                            data-category="head"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Глаза -->
+                <section class="category">
+                    <h2 class="category-title">Глаза</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/eyes/eyes_001.png"
+                            alt="eyes 001"
+                            data-category="eyes"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/eyes/eyes_002.png"
+                            alt="eyes 002"
+                            data-category="eyes"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/eyes/eyes_003.png"
+                            alt="eyes 003"
+                            data-category="eyes"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Положение торса -->
+                <section class="category">
+                    <h2 class="category-title">Положение торса</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/torso/torso_001.png"
+                            alt="torso 001"
+                            data-category="torso"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/torso/torso_002.png"
+                            alt="torso 002"
+                            data-category="torso"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/torso/torso_003.png"
+                            alt="torso 003"
+                            data-category="torso"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Хвост -->
+                <section class="category">
+                    <h2 class="category-title">Хвост</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/tail/tail_001.png"
+                            alt="tail 001"
+                            data-category="tail"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/tail/tail_002.png"
+                            alt="tail 002"
+                            data-category="tail"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/tail/tail_003.png"
+                            alt="tail 003"
+                            data-category="tail"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Положение камеры -->
+                <section class="category">
+                    <h2 class="category-title">Положение камеры</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/camera/camera_001.png"
+                            alt="camera 001"
+                            data-category="camera"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/camera/camera_002.png"
+                            alt="camera 002"
+                            data-category="camera"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/camera/camera_003.png"
+                            alt="camera 003"
+                            data-category="camera"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+
+                <!-- Бэкграунд -->
+                <section class="category">
+                    <h2 class="category-title">Бэкграунд</h2>
+                    <div class="options-row">
+                        <img
+                            class="option-image"
+                            src="../assets/categories/background/background_001.png"
+                            alt="background 001"
+                            data-category="background"
+                            data-key="001"
+                            data-text="Картинка 001"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/background/background_002.png"
+                            alt="background 002"
+                            data-category="background"
+                            data-key="002"
+                            data-text="Картинка 002"
+                        />
+                        <img
+                            class="option-image"
+                            src="../assets/categories/background/background_003.png"
+                            alt="background 003"
+                            data-category="background"
+                            data-key="003"
+                            data-text="Картинка 003"
+                        />
+                    </div>
+                </section>
+            </section>
+
+            <!-- БЛОК ТЕКСТА И КНОПОК -->
+            <section class="output-section">
+                <h2 class="category-title">Собранный промпт</h2>
+
+                <textarea
+                    id="outputText"
+                    class="output-text"
+                    rows="8"
+                    readonly
+                ></textarea>
+
+                <div id="selectedImages" class="selected-images"></div>
+
+                <div class="buttons-row">
+                    <button id="copyBtn" class="btn primary">
+                        Копировать текст
+                    </button>
+                    <button id="resetBtn" class="btn ghost">
+                        Сбросить всё
+                    </button>
+                </div>
+
+                <div id="copyNotice" class="copy-notice"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
