@@ -1,152 +1,181 @@
-const BASE_PROMPT =
-    "Create now a high quality horizontal image strictly by the following description:";
+document.addEventListener("DOMContentLoaded", () => {
+    const basePrompt =
+        "Create now a high quality horizontal image strictly by the following description:";
 
-const CATEGORY_ORDER = [
-    "style",
-    "mood",
-    "head",
-    "eyes",
-    "torso",
-    "tail",
-    "camera",
-    "background",
-];
+    // Карточки подписями (потом можешь поменять текст на свои)
+    const optionLabels = {
+        style: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003",
+            "004": "Картинка 004",
+            "005": "Картинка 005"
+        },
+        mood: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        },
+        head: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        },
+        eyes: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        },
+        torso: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        },
+        tail: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        },
+        camera: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        },
+        background: {
+            "001": "Картинка 001",
+            "002": "Картинка 002",
+            "003": "Картинка 003"
+        }
+    };
 
-const outputText = document.getElementById("outputText");
-const selectedImagesContainer = document.getElementById("selectedImages");
-const images = document.querySelectorAll(".option-image");
-const copyBtn = document.getElementById("copyBtn");
-const resetBtn = document.getElementById("resetBtn");
-const copyNotice = document.getElementById("copyNotice");
+    const outputText = document.getElementById("outputText");
+    const copyBtn = document.getElementById("copyBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const copyNotice = document.getElementById("copyNotice");
+    const selectedImages = document.getElementById("selectedImages");
 
-const selected = {};
+    const optionImages = document.querySelectorAll(".option-image");
+    const selected = {};
 
-// начальное значение текста
-outputText.value = BASE_PROMPT;
+    // стартовый текст
+    outputText.value = basePrompt + "\n";
 
-// обновление текста промпта (без подписей)
-function updatePrompt() {
-    const parts = [];
+    function assemblePrompt() {
+        const pieces = Object.values(selected).map((item) => item.text);
 
-    CATEGORY_ORDER.forEach((cat) => {
-        if (selected[cat]?.text) {
-            parts.push(selected[cat].text);
+        if (pieces.length === 0) {
+            outputText.value = basePrompt + "\n";
+            return;
+        }
+
+        // Базовый текст + пустая строка + каждый пункт с новой строки
+        const lines = [
+            basePrompt,
+            "",
+            ...pieces
+        ];
+
+        outputText.value = lines.join("\n");
+    }
+
+    function renderSelectedPreview() {
+        selectedImages.innerHTML = "";
+
+        Object.values(selected).forEach((item) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "selected-thumb";
+
+            const img = document.createElement("img");
+            img.src = item.src;
+            img.alt = item.alt || "";
+
+            wrapper.appendChild(img);
+            selectedImages.appendChild(wrapper);
+        });
+    }
+
+    optionImages.forEach((img) => {
+        img.addEventListener("click", () => {
+            const category = img.dataset.category;
+            const key = img.dataset.key;
+
+            // снимаем старый active в этой категории
+            optionImages.forEach((other) => {
+                if (other.dataset.category === category) {
+                    other.classList.remove("active");
+                }
+            });
+
+            // новый active
+            img.classList.add("active");
+
+            const label =
+                (optionLabels[category] && optionLabels[category][key]) ||
+                img.dataset.text ||
+                "";
+
+            selected[category] = {
+                key,
+                text: label,
+                src: img.src,
+                alt: img.alt
+            };
+
+            // подпись рядом с заголовком категории
+            const categoryEl = img.closest(".category");
+            const titleEl = categoryEl.querySelector(".category-title");
+
+            let labelSpan = titleEl.querySelector(".category-label");
+            if (!labelSpan) {
+                labelSpan = document.createElement("span");
+                labelSpan.className = "category-label";
+                titleEl.appendChild(labelSpan);
+            }
+            labelSpan.textContent = label;
+
+            assemblePrompt();
+            renderSelectedPreview();
+        });
+    });
+
+    copyBtn.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText(outputText.value);
+
+            copyNotice.textContent =
+                "Текст скопирован.\nТеперь можно вставлять его в промпт.";
+            copyNotice.classList.add("visible");
+
+            setTimeout(() => {
+                copyNotice.classList.remove("visible");
+            }, 5000); // держим уведомление 5 секунд
+        } catch (err) {
+            copyNotice.textContent = "Не удалось скопировать текст.";
+            copyNotice.classList.add("visible");
+            setTimeout(() => {
+                copyNotice.classList.remove("visible");
+            }, 5000);
         }
     });
 
-    if (parts.length) {
-        outputText.value = BASE_PROMPT + " " + parts.join(" ");
-    } else {
-        outputText.value = BASE_PROMPT;
-    }
-}
+    resetBtn.addEventListener("click", () => {
+        // очищаем выбор
+        for (const key in selected) {
+            delete selected[key];
+        }
 
-// превью выбранных картинок
-function updateSelectedImages() {
-    selectedImagesContainer.innerHTML = "";
+        // убираем активы
+        optionImages.forEach((img) => img.classList.remove("active"));
 
-    CATEGORY_ORDER.forEach((cat) => {
-        const entry = selected[cat];
-        if (!entry || !entry.src) return;
+        // чистим подписи
+        document
+            .querySelectorAll(".category-label")
+            .forEach((span) => span.remove());
 
-        const wrapper = document.createElement("div");
-        wrapper.className = "selected-thumb";
+        // чистим превью
+        selectedImages.innerHTML = "";
 
-        const img = document.createElement("img");
-        img.src = entry.src;
-        img.alt = cat;
-
-        wrapper.appendChild(img);
-        selectedImagesContainer.appendChild(wrapper);
+        // возвращаем базовый текст
+        outputText.value = basePrompt + "\n";
     });
-}
-
-// подпись у заголовка категории
-function updateCategoryLabel(imgEl, label) {
-    const categoryEl = imgEl.closest(".category");
-    if (!categoryEl) return;
-
-    const titleEl = categoryEl.querySelector(".category-title");
-    if (!titleEl) return;
-
-    let span = titleEl.querySelector(".category-label");
-    if (!span) {
-        span = document.createElement("span");
-        span.className = "category-label";
-        titleEl.appendChild(span);
-    }
-
-    span.textContent = label ? `· ${label}` : "";
-}
-
-// обработчики кликов по картинкам
-images.forEach((img) => {
-    img.addEventListener("click", () => {
-        const category = img.dataset.category;
-        const text = img.dataset.text || "";
-        const label = img.dataset.label || "";
-        const src = img.getAttribute("src");
-
-        // сохраняем выбранное
-        selected[category] = { text, label, src };
-
-        // подсветка только у выбранной в категории
-        images.forEach((other) => {
-            if (other.dataset.category === category) {
-                other.classList.toggle("active", other === img);
-            }
-        });
-
-        updatePrompt();
-        updateSelectedImages();
-        updateCategoryLabel(img, label);
-    });
-});
-
-// копирование текста
-let copyTimeoutId = null;
-
-function showCopyNotice(message) {
-    copyNotice.textContent = message;
-    copyNotice.classList.add("visible");
-
-    if (copyTimeoutId) {
-        clearTimeout(copyTimeoutId);
-    }
-
-    copyTimeoutId = setTimeout(() => {
-        copyNotice.classList.remove("visible");
-    }, 15000); // 15 секунд
-}
-
-copyBtn.addEventListener("click", async () => {
-    try {
-        await navigator.clipboard.writeText(outputText.value);
-        showCopyNotice("Текст скопирован. Можно вставлять в модель.");
-    } catch (err) {
-        showCopyNotice("Не удалось скопировать. Скопируй текст вручную.");
-    }
-});
-
-// сброс всего
-resetBtn.addEventListener("click", () => {
-    // очищаем состояние
-    Object.keys(selected).forEach((key) => delete selected[key]);
-
-    // убираем подсветку
-    images.forEach((img) => img.classList.remove("active"));
-
-    // сбрасываем текст
-    outputText.value = BASE_PROMPT;
-
-    // чистим превью
-    selectedImagesContainer.innerHTML = "";
-
-    // убираем подписи у заголовков
-    document
-        .querySelectorAll(".category-label")
-        .forEach((el) => el.remove());
-
-    // уведомление тоже убираем
-    copyNotice.classList.remove("visible");
 });
