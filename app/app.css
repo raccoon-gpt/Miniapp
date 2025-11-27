@@ -134,7 +134,7 @@ body {
   border: 1px solid #374151;
   position: sticky;
   bottom: 0;
-  left: 200px;
+  left: 40px;
   right: 40px;
   padding: 12px 16px 16px;
   background: linear-gradient(
@@ -152,7 +152,7 @@ body {
 .output-text {
   width: 100%;
   min-height: 120px;
-  max-height: 200px;
+  max-height: 140px;
   border-radius: 12px;
   border: 1px solid #374151;
   background: #212121;
@@ -194,7 +194,7 @@ body {
   flex: 1;
   border-radius: 999px;
   border: none;
-  padding: 10px 14px;
+  padding: 100px 14px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
