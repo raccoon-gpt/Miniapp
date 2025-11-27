@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     setTimeout(() => {
                         copyNotice.classList.remove('visible');
-                    }, 5000); // держим 5 секунд
+                    }, 15000); // держим 15 секунд
                 }
             } catch (e) {
                 console.error('Clipboard error:', e);
