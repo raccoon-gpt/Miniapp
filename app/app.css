@@ -55,6 +55,11 @@ body {
     margin-top: 32px;
     display: flex;
     justify-content: center;
+    width: 100%;
+}
+.hero-actions button {
+    max-width: 260px;
+    width: 100%;
 }
 
 /* iOS glass button */
