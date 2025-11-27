@@ -103,7 +103,7 @@ body {
 .option-image {
   width: 80px;
   height: 80px;
-  border-radius: 5px;
+  border-radius: 10px;
   object-fit: cover;
   flex-shrink: 0;          /* чтобы не ужимались при горизонтальном скролле */
   cursor: pointer;
@@ -153,7 +153,7 @@ body {
   max-height: 200px;
   border-radius: 12px;
   border: 1px solid #374151;
-  background: #090909;
+  background: #212121;
   color: #f9fafb;
   padding: 10px 12px;
   font-size: 14px;
@@ -217,7 +217,7 @@ body {
 /* Надпись "скопировано" */
 
 .copy-notice {
-  margin-top: 160px;
+  margin-top: 6px;
   min-height: 16px;
   font-size: 12px;
   color: #a3e635;
