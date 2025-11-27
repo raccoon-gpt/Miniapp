@@ -36,23 +36,7 @@
             margin-bottom: 30px;
         }
 
-        .button {
-            width: 100%;
-            padding: 14px 0;
-            background: #4c8bf5;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .button:active {
-            transform: scale(0.97);
-            background: #3a6ed8;
-        }
+        /* стили старой .button и .button:active УДАЛЁНЫ */
     </style>
 </head>
 
@@ -64,9 +48,13 @@
             Create your perfect character using simple steps.
         </p>
 
-        <button class="button" onclick="location.href='app/app.html'">
-            ОТКРЫТЬ ГЕНЕРАТОР ЕНОТОВ
-        </button>
+        <div class="hero-actions">
+            <button
+                class="glass-btn-ios glow"
+                onclick="location.href='app/app.html'">
+                <span>ОТКРЫТЬ ГЕНЕРАТОР ЕНОТОВ</span>
+            </button>
+        </div>
     </div>
 </body>
 </html>
