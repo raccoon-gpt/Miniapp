@@ -151,8 +151,8 @@ body {
 
 .output-text {
   width: 100%;
-  min-height: 120px;
-  max-height: 140px;
+  min-height: 90px;
+  max-height: 100px;
   border-radius: 12px;
   border: 1px solid #374151;
   background: #212121;
@@ -161,7 +161,7 @@ body {
   font-size: 12px;
   resize: vertical;
   outline: none;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   line-height: 1.4;
   white-space: pre-wrap;  /* чтобы переносы строк из JS отображались красиво */
 }
