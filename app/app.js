@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 await navigator.clipboard.writeText(text);
 
                 if (copyNotice) {
-                    copyNotice.textContent = 'Скопировано в буфер/nТеперь открывай свой GPT и отправляй в чат';
+                    copyNotice.textContent = 'Скопировано в буфер«\nТеперь открывай свой GPT и отправляй в чат';
                     copyNotice.classList.add('visible');
 
                     setTimeout(() => {
