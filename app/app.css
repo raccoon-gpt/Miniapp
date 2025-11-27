@@ -219,7 +219,7 @@ body {
 /* Надпись "скопировано" */
 
 .copy-notice {
-  margin-top: 8px;
+  margin-top: 80px;
   min-height: 16px;
   font-size: 12px;
   color: #a3e635;
