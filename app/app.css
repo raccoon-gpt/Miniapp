@@ -10,14 +10,14 @@ body {
   padding: 0;
   height: 100%;
 }
-
+<!--
 body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
     system-ui, -system-ui, sans-serif;
   background: #050505;
   color: #f9fafb;
 }
-
+-->
 /* ЛЕЙАУТ С ФИКСИРОВАННЫМ НИЗОМ */
 
 .page {
