@@ -75,7 +75,7 @@ body {
   margin: 0 0 8px;
   font-size: 16px;
   font-weight: 600;
-  color: #746892
+  color: #e6e6e6;
   display: inline-block;
 }
 
@@ -158,7 +158,7 @@ body {
   background: #212121;
   color: #f9fafb;
   padding: 10px 12px;
-  font-size: 14px;
+  font-size: 12px;
   resize: vertical;
   outline: none;
   margin-bottom: 8px;
