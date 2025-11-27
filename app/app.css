@@ -122,9 +122,8 @@ body {
 /* активная картинка — КЛАСС active (совпадает с JS) */
 
 .option-image.active {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
-  opacity: 1;
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 4px #3b82f6; /* вместо 1px spread */
 }
 
 /* НИЖНЯЯ ПАНЕЛЬ — ВСЕГДА ВИДНА */
