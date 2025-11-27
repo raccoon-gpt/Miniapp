@@ -219,6 +219,7 @@ body {
   background: transparent;
   color: #e5e7eb;
   border: 1px solid #4b5563;
+  font-family: 'Rubik', sans-serif;
 }
 
 .btn:active {
