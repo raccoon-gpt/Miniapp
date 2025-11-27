@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prompt Builder</title>
 
-    <link rel="stylesheet" href="app.css" />
+    <!-- Стили -->
+    <link rel="stylesheet" href="app.css?v=2" />
 </head>
 <body>
     <div class="page">
@@ -22,7 +23,10 @@
 
                 <!-- Художественный стиль -->
                 <section class="category">
-                    <h2 class="category-title">Художественный стиль</h2>
+                    <h2 class="category-title">
+                        Художественный стиль
+                        <span class="category-label" data-category="style"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -31,7 +35,6 @@
                             data-category="style"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="реалистичный"
                         />
                         <img
                             class="option-image"
@@ -40,7 +43,6 @@
                             data-category="style"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="рисунок маслом"
                         />
                         <img
                             class="option-image"
@@ -49,7 +51,6 @@
                             data-category="style"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="комикс / графика"
                         />
                         <img
                             class="option-image"
@@ -58,7 +59,6 @@
                             data-category="style"
                             data-key="004"
                             data-text="Картинка 004"
-                            data-label="акварельный"
                         />
                         <img
                             class="option-image"
@@ -67,14 +67,16 @@
                             data-category="style"
                             data-key="005"
                             data-text="Картинка 005"
-                            data-label="неон / киберпанк"
                         />
                     </div>
                 </section>
 
                 <!-- Настроение -->
                 <section class="category">
-                    <h2 class="category-title">Настроение</h2>
+                    <h2 class="category-title">
+                        Настроение
+                        <span class="category-label" data-category="mood"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -83,7 +85,6 @@
                             data-category="mood"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="спокойное"
                         />
                         <img
                             class="option-image"
@@ -92,7 +93,6 @@
                             data-category="mood"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="динамичное"
                         />
                         <img
                             class="option-image"
@@ -101,14 +101,16 @@
                             data-category="mood"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="мрачное"
                         />
                     </div>
                 </section>
 
                 <!-- Положение головы -->
                 <section class="category">
-                    <h2 class="category-title">Положение головы</h2>
+                    <h2 class="category-title">
+                        Положение головы
+                        <span class="category-label" data-category="head"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -117,7 +119,6 @@
                             data-category="head"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="прямо"
                         />
                         <img
                             class="option-image"
@@ -126,7 +127,6 @@
                             data-category="head"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="три четверти"
                         />
                         <img
                             class="option-image"
@@ -135,14 +135,16 @@
                             data-category="head"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="профиль"
                         />
                     </div>
                 </section>
 
                 <!-- Глаза -->
                 <section class="category">
-                    <h2 class="category-title">Глаза</h2>
+                    <h2 class="category-title">
+                        Глаза
+                        <span class="category-label" data-category="eyes"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -151,7 +153,6 @@
                             data-category="eyes"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="спокойный взгляд"
                         />
                         <img
                             class="option-image"
@@ -160,7 +161,6 @@
                             data-category="eyes"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="широко раскрытые"
                         />
                         <img
                             class="option-image"
@@ -169,14 +169,16 @@
                             data-category="eyes"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="прищуренные"
                         />
                     </div>
                 </section>
 
                 <!-- Положение торса -->
                 <section class="category">
-                    <h2 class="category-title">Положение торса</h2>
+                    <h2 class="category-title">
+                        Положение торса
+                        <span class="category-label" data-category="torso"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -185,7 +187,6 @@
                             data-category="torso"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="фронтально"
                         />
                         <img
                             class="option-image"
@@ -194,7 +195,6 @@
                             data-category="torso"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="слегка в сторону"
                         />
                         <img
                             class="option-image"
@@ -203,14 +203,16 @@
                             data-category="torso"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="сильный разворот"
                         />
                     </div>
                 </section>
 
                 <!-- Хвост -->
                 <section class="category">
-                    <h2 class="category-title">Хвост</h2>
+                    <h2 class="category-title">
+                        Хвост
+                        <span class="category-label" data-category="tail"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -219,7 +221,6 @@
                             data-category="tail"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="спокойно опущен"
                         />
                         <img
                             class="option-image"
@@ -228,7 +229,6 @@
                             data-category="tail"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="чуть поднят"
                         />
                         <img
                             class="option-image"
@@ -237,14 +237,16 @@
                             data-category="tail"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="распушён и активен"
                         />
                     </div>
                 </section>
 
                 <!-- Положение камеры -->
                 <section class="category">
-                    <h2 class="category-title">Положение камеры</h2>
+                    <h2 class="category-title">
+                        Положение камеры
+                        <span class="category-label" data-category="camera"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -253,7 +255,6 @@
                             data-category="camera"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="на уровне глаз"
                         />
                         <img
                             class="option-image"
@@ -262,7 +263,6 @@
                             data-category="camera"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="слегка снизу"
                         />
                         <img
                             class="option-image"
@@ -271,14 +271,16 @@
                             data-category="camera"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="слегка сверху"
                         />
                     </div>
                 </section>
 
                 <!-- Бэкграунд -->
                 <section class="category">
-                    <h2 class="category-title">Бэкграунд</h2>
+                    <h2 class="category-title">
+                        Бэкграунд
+                        <span class="category-label" data-category="background"></span>
+                    </h2>
                     <div class="options-row">
                         <img
                             class="option-image"
@@ -287,7 +289,6 @@
                             data-category="background"
                             data-key="001"
                             data-text="Картинка 001"
-                            data-label="минималистичный фон"
                         />
                         <img
                             class="option-image"
@@ -296,7 +297,6 @@
                             data-category="background"
                             data-key="002"
                             data-text="Картинка 002"
-                            data-label="детализированный фон"
                         />
                         <img
                             class="option-image"
@@ -305,7 +305,6 @@
                             data-category="background"
                             data-key="003"
                             data-text="Картинка 003"
-                            data-label="атмосферный свет"
                         />
                     </div>
                 </section>
@@ -338,6 +337,6 @@
         </main>
     </div>
 
-    <script src="app.js" defer></script>
+    <script src="app.js?v=2" defer></script>
 </body>
 </html>
