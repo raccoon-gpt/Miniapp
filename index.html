@@ -159,7 +159,42 @@
             0 0 18px rgba(96, 165, 250, 0.75);
     }
 }
-    
+
+/* Контейнер для картинки ЧТОБ НА ФОТКЕ БЫЛА */
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Картинка */
+.hero-image {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Оверлей поверх изображения */
+.hero-overlay {
+    position: absolute;
+    bottom: 20px; /* отступ снизу */
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Текст поверх картинки */
+.hero-overlay .description {
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+        
     </style>
 </head>
 
@@ -175,7 +210,7 @@
             <button
                 class="glass-btn-ios glow"
                 onclick="location.href='app/app.html'">
-                <span>ОТКРЫТЬ ГЕНЕРАТОР ЕНОТОВ</span>
+                <span>ОТКРЫТЬ<br>ГЕНЕРАТОР ЕНОТОВ</span>
             </button>
         </div>
     </div>
