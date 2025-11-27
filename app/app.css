@@ -134,8 +134,8 @@ body {
   border: 1px solid #374151;
   position: sticky;
   bottom: 0;
-  left: 10px;
-  right: 10px;
+  left: 40px;
+  right: 40px;
   padding: 12px 16px 16px;
   background: linear-gradient(
     to top,
@@ -219,7 +219,7 @@ body {
 /* Надпись "скопировано" */
 
 .copy-notice {
-  margin-top: 80px;
+  margin-top: 8px;
   min-height: 16px;
   font-size: 12px;
   color: #a3e635;
@@ -228,5 +228,6 @@ body {
 }
 
 .copy-notice.visible {
+  margin-top: 100px;
   opacity: 1;
 }
