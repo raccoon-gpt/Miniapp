@@ -339,19 +339,25 @@
 
     <script src="app.js?v=2" defer></script>
 
-<!-- POPUP OVERLAY -->
-<div id="downloadOverlay" class="overlay">
-  <div class="popup">
-    <button class="close-btn" onclick="closePopup()">×</button>
+  <!-- POPUP -->
+  <div id="downloadOverlay" class="overlay visible">
+    <div class="popup">
 
-    <img id="popupImage" class="popup-image" src="" alt="Preview">
+      <button class="popup-close" onclick="closePopup()">×</button>
 
-    <div class="popup-footer">
-      <p class="popup-text">Нажмите, чтобы скачать картинку</p>
-      <button id="downloadBtn" class="download-btn">⬇</button>
+      <!-- ВАЖНО: id для смены картинки -->
+      <img id="popupImage" class="popup-image" src="imagespopup/raccoon_1.png" alt="Preview">
+
+      <div class="popup-bottom">
+        <div class="popup-text">
+          Картинка готова. Нажми кнопку, чтобы скачать её.
+        </div>
+
+        <button id="downloadBtn" class="popup-download">↓</button>
+      </div>
+
     </div>
   </div>
-</div>
 
 </body>
 </html>
