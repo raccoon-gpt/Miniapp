@@ -152,20 +152,6 @@
         0 0 8px rgba(250,204,21,0.5);
     }
 
-    /* Временная тест-кнопка — можно удалить */
-    .demo-open-btn {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #2563eb;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: none;
-      color: #fff;
-      font-size: 14px;
-      cursor: pointer;
-    }
   </style>
 </head>
 
@@ -178,7 +164,7 @@
       <button class="popup-close" onclick="closePopup()">×</button>
 
       <!-- ВАЖНО: id для смены картинки -->
-      <img id="popupImage" class="popup-image" src="photos/raccoon_1.jpg" alt="Preview">
+      <img id="popupImage" class="popup-image" src="imagespopup/raccoon_1.png" alt="Preview">
 
       <div class="popup-bottom">
         <div class="popup-text">
@@ -192,7 +178,7 @@
   </div>
 
   <!-- Временная кнопка для проверки попапа -->
-  <button class="demo-open-btn" onclick="openPopup()">Открыть попап</button>
+ <!-- <button class="demo-open-btn" onclick="openPopup()">Открыть попап</button> -->
 
   <script>
     const overlay = document.getElementById('downloadOverlay');
