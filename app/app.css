@@ -305,7 +305,7 @@ body {
 .popup-image {
   width: 100%;
   height: 50%
-  max-height: 60vh;      /* чтобы не вываливаться за экран */
+  /*max-height: 60vh;      /* чтобы не вываливаться за экран */
   object-fit: cover;     /* заполняем блок без искажений */
   object-position: top;  /* ВАЖНО: обрезаем снизу, верх всегда виден */
   border-radius: 18px;
