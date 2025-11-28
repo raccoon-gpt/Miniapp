@@ -308,6 +308,7 @@ body {
       object-fit: cover;     /* при необходимости подрежет */
         /* режет снизу, а не сверху */
       display: block;
+      object-position: top;
       background: #1e1e1e;
 }
 
