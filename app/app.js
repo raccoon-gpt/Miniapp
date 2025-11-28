@@ -6,13 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const outputEl = document.getElementById('outputText');
     const selectedImagesContainer = document.getElementById('selectedImages');
     
- /* const copyBtn = document.getElementById('copyBtn'); */
+    const copyBtn = document.getElementById('copyBtn');
 
-    const copyBtn = document.getElementById("copyBtn").addEventListener("click", () => {
-    copyText();   // твоя функция копирования (если есть)
-    openPopup();  // открытие попапа
-});
-    
     const resetBtn = document.getElementById('resetBtn');
     const copyNotice = document.getElementById('copyNotice');
 
@@ -231,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- КНОПКА КОПИРОВАНИЯ ---
+    // --- КНОПКА КОПИРОВАНИЯ с зеленым текстом---
 
     
 /*   if (copyBtn) {
@@ -256,7 +251,23 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
 */
 
+// --- КНОПКА КОПИРОВАНИЯ С ПОПАПОМ---
 
+if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+        const text = getOutputText();
+
+        // 1) копируем текст в буфер
+        try {
+            await navigator.clipboard.writeText(text);
+        } catch (e) {
+            console.error('Clipboard error:', e);
+        }
+
+        // 2) открываем страницу с попапом
+        window.location.href = "../popup/popup.html";
+    });
+}
 
     // --- КНОПКА СБРОСА ---
 
