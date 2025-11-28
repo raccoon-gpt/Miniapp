@@ -277,3 +277,81 @@ if (copyBtn) {
         });
     }
 });
+
+
+// =============== POPUP SCRIPT ===============
+
+    const overlay = document.getElementById('downloadOverlay');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const popupImage = document.getElementById('popupImage');
+
+    /* 
+      Список картинок для рандома.
+      Папка "imagespopup" лежит рядом с этим HTML.
+      Сюда просто добавляешь свои файлы.
+    */
+    const IMAGES = [
+      "imagespopup/raccoon_1.png",
+      "imagespopup/raccoon_2.png",
+      "imagespopup/raccoon_3.png",
+/*    "imagespopup/raccoon_4.png",
+      "imagespopup/raccoon_5.png",
+      "imagespopup/raccoon_6.png",
+      "imagespopup/raccoon_7.png",
+      "imagespopup/raccoon_8.png",
+      "imagespopup/raccoon_9.png",
+      "imagespopup/raccoon_10.png"
+*/
+      
+      // добавляй дальше свои файлы
+      
+    ];
+
+    /* если хочешь — отдельный список для скачивания
+       (может отличаться от превью). Пока использую тот же. */
+    const DOWNLOAD_IMAGES = IMAGES;
+
+    function getRandomFrom(arr) {
+      if (!arr || arr.length === 0) return null;
+      const idx = Math.floor(Math.random() * arr.length);
+      return arr[idx];
+    }
+
+    function openPopup() {
+      // выбираем случайную картинку
+      const randomSrc = getRandomFrom(IMAGES);
+      if (randomSrc) {
+        popupImage.src = randomSrc;
+      }
+
+      overlay.classList.add("visible");
+    }
+
+    function closePopup() {
+      overlay.classList.remove("visible");
+    }
+
+    downloadBtn.addEventListener("click", () => {
+      // Берём тот же рандомный файл для скачивания
+      const currentSrc = popupImage.src;
+      // если хочешь строго из списка DOWNLOAD_IMAGES — можно тоже рандомно брать оттуда
+
+      const link = document.createElement("a");
+      link.href = currentSrc;
+      // можно вырезать имя файла из пути:
+      const fileName = currentSrc.split("/").pop() || "image.png";
+      link.download = fileName;
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+    });
+
+    // Дополнительно: по клику по затемнению закрывать попап
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        closePopup();
+      }
+    });
+
