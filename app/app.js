@@ -5,7 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Элементы интерфейса
     const outputEl = document.getElementById('outputText');
     const selectedImagesContainer = document.getElementById('selectedImages');
-    const copyBtn = document.getElementById('copyBtn');
+    
+ /* const copyBtn = document.getElementById('copyBtn'); */
+
+    const copyBtn = document.getElementById("copyBtn").addEventListener("click", () => {
+    copyText();   // твоя функция копирования (если есть)
+    openPopup();  // открытие попапа
+});
+    
     const resetBtn = document.getElementById('resetBtn');
     const copyNotice = document.getElementById('copyNotice');
 
@@ -226,7 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- КНОПКА КОПИРОВАНИЯ ---
 
-    if (copyBtn) {
+    
+/*   if (copyBtn) {
         copyBtn.addEventListener('click', async () => {
             const text = getOutputText();
 
@@ -245,7 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Clipboard error:', e);
             }
         });
-    }
+    } 
+*/
+
+
 
     // --- КНОПКА СБРОСА ---
 
