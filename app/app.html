@@ -339,32 +339,42 @@
 
     <script src="app.js?v=2" defer></script>
 
-  <!-- POPUP -->
-  <div id="downloadOverlay" class="overlay">
-    <div class="popup">
+<!-- POPUP -->
+<div id="downloadOverlay" class="overlay">
+  <div class="popup">
 
-      <button class="popup-close" onclick="closePopup()">×</button>
+    <button class="popup-close" onclick="closePopup()">×</button>
 
-      <!-- ВАЖНО: id для смены картинки -->
-      <img id="popupImage" class="popup-image" src="imagespopup/raccoon_1.png" alt="Preview">
+    <!-- Картинка -->
+    <img id="popupImage" class="popup-image" src="imagespopup/raccoon_1.png" alt="Preview">
 
-      <div class="popup-bottom">
+    <div class="popup-bottom">
 
+      <!-- Зелёный текст -->
+      <div class="popup-text">
+        <span style="color:#00ff8a;">
+          Твой промпт успешно скопирован!<br>
+          Теперь открывай GPT<br>
+          и кидай в чат.
+        </span>
+      </div>
 
-          <div class="popup-text">
-  <span style="color:#00ff8a;">Твой промпт успешно скопирован!<br>
-  Теперь открывай GPT<br>и кидай в чат.</span><br><br>           
-          
-        
-          <div class="popup-text">
-  <span style="color:#ffffff;">Вверху просто рандомная картинка с енотом.<br>Можешь скачать себе на память.<br><br>           
+      <!-- Белый текст + кнопка справа -->
+      <div class="popup-bottom-row">
+        <div class="popup-text">
+          <span style="color:#ffffff;">
+            Вверху просто рандомная картинка с енотом.<br>
+            Можешь скачать себе на память.
+          </span>
         </div>
 
         <button id="downloadBtn" class="popup-download">↓</button>
       </div>
-      </div>
+
     </div>
+
   </div>
+</div>
 
 </body>
 </html>
