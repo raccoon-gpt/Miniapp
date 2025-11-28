@@ -301,13 +301,18 @@ body {
       transform: scale(1) translateY(0);
     }
 
-    .popup-image {
-      width: 100%;
-      height: 50%;
-      border-radius: 18px;
-      object-fit: cover;
-      background: #1e1e1e;
-    }
+
+.popup-image {
+  width: 100%;
+  height: 50%
+  max-height: 60vh;      /* чтобы не вываливаться за экран */
+  object-fit: cover;     /* заполняем блок без искажений */
+  object-position: top;  /* ВАЖНО: обрезаем снизу, верх всегда виден */
+  border-radius: 18px;
+  display: block;
+  margin-bottom: 14px;
+  background: #1e1e1e;
+}
 
     .popup-close {
       position: absolute;
