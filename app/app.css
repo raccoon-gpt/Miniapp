@@ -303,7 +303,7 @@ body {
 
 .popup-image {
       width: 100%;
-      height: 100%;
+      height: auto;
       border-radius: 18px;
       object-fit: cover;     /* при необходимости подрежет */
         /* режет снизу, а не сверху */
