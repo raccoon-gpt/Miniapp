@@ -291,9 +291,9 @@ if (copyBtn) {
       Сюда просто добавляешь свои файлы.
     */
     const IMAGES = [
-      "imagespopup/raccoon_1.png",
-      "imagespopup/raccoon_2.png",
-      "imagespopup/raccoon_3.png",
+      "../assets/imagespopup/raccoon_1.png",
+      "../assets/imagespopup/raccoon_2.png",
+      "../assets/imagespopup/raccoon_3.png",
 /*    "imagespopup/raccoon_4.png",
       "imagespopup/raccoon_5.png",
       "imagespopup/raccoon_6.png",
