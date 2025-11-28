@@ -264,8 +264,8 @@ if (copyBtn) {
             console.error('Clipboard error:', e);
         }
 
-        // 2) открываем страницу с попапом
-        window.location.href = "../popup/popup.html";
+        // 2) открываем сам попап
+        openPopup();
     });
 }
 
