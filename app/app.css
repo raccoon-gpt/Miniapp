@@ -302,13 +302,12 @@ body {
     }
 
 .popup-image {
-  width: 100%;
-  height: auto;          /* картинка сама держит пропорции */
-  max-height: 60vh;      /* НЕ позволит ей занять весь экран */
-  object-fit: cover;     /* при необходимости подрежет */
-  object-position: top;  /* режет снизу, а не сверху */
-  border-radius: 18px;
-  
+      width: 100%;
+      height: 50%;
+      border-radius: 18px;
+      object-fit: cover;     /* при необходимости подрежет */
+      object-position: top;  /* режет снизу, а не сверху */
+      background: #1e1e1e;
 }
 
 
