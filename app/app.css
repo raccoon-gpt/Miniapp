@@ -106,7 +106,7 @@ body {
   padding: 4px 0 4px;      /* небольшой отступ, чтобы свечение не обрезалось */
 }
 
-/* КАРТИНКИ 100×100, не растягиваются */
+/* КАРТИНКИ 80×80, не растягиваются */
 
 .option-image {
   width: 80px;
@@ -304,9 +304,9 @@ body {
 .popup-image {
       width: 100%;
       height: auto;
+      max-height: 20vh; 
       border-radius: 18px;
       object-fit: cover;     /* при необходимости подрежет */
-        /* режет снизу, а не сверху */
       display: block;
       object-position: top;
       background: #1e1e1e;
