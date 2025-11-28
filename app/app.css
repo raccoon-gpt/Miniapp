@@ -308,7 +308,7 @@ body {
   object-fit: cover;     /* при необходимости подрежет */
   object-position: top;  /* режет снизу, а не сверху */
   border-radius: 18px;
-  display: block;
+  
   margin-bottom: 14px;
 }
 
