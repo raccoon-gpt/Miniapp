@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popup Download</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #050505;
+      color: #f9fafb;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        system-ui, -system-ui, sans-serif;
+    }
+
+    /* ЗАДНИЙ ФОН: затемнение + iOS blur */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    .overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* POPUP — 80% экрана + анимация появления */
+    .popup {
+      position: relative;
+      width: 80vw;
+      height: 80vh;
+      max-width: 500px;
+      max-height: 780px;
+
+      background: #111;
+      border-radius: 24px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.75),
+        0 0 0 1px rgba(255,255,255,0.05);
+      overflow: hidden;
+
+      opacity: 0;
+      transform: scale(0.94) translateY(6px);
+      transition:
+        opacity 0.24s ease-out,
+        transform 0.24s ease-out;
+    }
+
+    .overlay.visible .popup {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    .popup-image {
+      width: 100%;
+      height: 50%;
+      border-radius: 18px;
+      object-fit: cover;
+      background: #1e1e1e;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(0,0,0,0.8);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.12s ease;
+    }
+
+    .popup-close:hover {
+      background: rgba(20,20,20,0.95);
+      box-shadow: 0 0 10px rgba(255,255,255,0.25);
+    }
+
+    .popup-close:active {
+      transform: scale(0.92);
+    }
+
+    .popup-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding: 8px 4px 2px;
+    }
+
+    .popup-text {
+      flex: 1;
+      padding-right: 10px;
+      font-size: 15px;
+      color: #e5e7eb;
+      line-height: 1.4;
+    }
+
+    .popup-download {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background: radial-gradient(circle at 30% 0%, #facc15, #f97316);
+      color: #111;
+      font-size: 26px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow:
+        0 10px 24px rgba(0,0,0,0.7),
+        0 0 12px rgba(250,204,21,0.7);
+      transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+    }
+
+    .popup-download:active {
+      transform: scale(0.93);
+      box-shadow:
+        0 6px 16px rgba(0,0,0,0.8),
+        0 0 8px rgba(250,204,21,0.5);
+    }
+
+    /* Временная тест-кнопка — можно удалить */
+    .demo-open-btn {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2563eb;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- POPUP -->
+  <div id="downloadOverlay" class="overlay">
+    <div class="popup">
+
+      <button class="popup-close" onclick="closePopup()">×</button>
+
+      <!-- ВАЖНО: id для смены картинки -->
+      <img id="popupImage" class="popup-image" src="photos/raccoon_1.jpg" alt="Preview">
+
+      <div class="popup-bottom">
+        <div class="popup-text">
+          Картинка готова. Нажми кнопку, чтобы скачать её.
+        </div>
+
+        <button id="downloadBtn" class="popup-download">↓</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Временная кнопка для проверки попапа -->
+  <button class="demo-open-btn" onclick="openPopup()">Открыть попап</button>
+
+  <script>
+    const overlay = document.getElementById('downloadOverlay');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const popupImage = document.getElementById('popupImage');
+
+    /* 
+      Список картинок для рандома.
+      Папка "photos" лежит рядом с этим HTML.
+      Сюда просто добавляешь свои файлы.
+    */
+    const IMAGES = [
+      "photos/raccoon_1.jpg",
+      "photos/raccoon_2.jpg",
+      "photos/raccoon_3.jpg"
+      // добавляй дальше свои файлы:
+      // "photos/raccoon_4.jpg",
+      // "photos/raccoon_5.png",
+    ];
+
+    /* если хочешь — отдельный список для скачивания
+       (может отличаться от превью). Пока использую тот же. */
+    const DOWNLOAD_IMAGES = IMAGES;
+
+    function getRandomFrom(arr) {
+      if (!arr || arr.length === 0) return null;
+      const idx = Math.floor(Math.random() * arr.length);
+      return arr[idx];
+    }
+
+    function openPopup() {
+      // выбираем случайную картинку
+      const randomSrc = getRandomFrom(IMAGES);
+      if (randomSrc) {
+        popupImage.src = randomSrc;
+      }
+
+      overlay.classList.add("visible");
+    }
+
+    function closePopup() {
+      overlay.classList.remove("visible");
+    }
+
+    downloadBtn.addEventListener("click", () => {
+      // Берём тот же рандомный файл для скачивания
+      const currentSrc = popupImage.src;
+      // если хочешь строго из списка DOWNLOAD_IMAGES — можно тоже рандомно брать оттуда
+
+      const link = document.createElement("a");
+      link.href = currentSrc;
+      // можно вырезать имя файла из пути:
+      const fileName = currentSrc.split("/").pop() || "image.png";
+      link.download = fileName;
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      closePopup();
+    });
+
+    // Дополнительно: по клику по затемнению закрывать попап
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        closePopup();
+      }
+    });
+  </script>
+
+</body>
+</html>
