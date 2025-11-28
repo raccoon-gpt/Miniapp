@@ -307,6 +307,7 @@ body {
       border-radius: 18px;
       object-fit: cover;     /* при необходимости подрежет */
         /* режет снизу, а не сверху */
+      display: block;
       background: #1e1e1e;
 }
 
