@@ -328,7 +328,7 @@ if (copyBtn) {
 
   setTimeout(() => {
     overlay.classList.remove("loading");
-  }, 3000);
+  }, 5000);
     }
 
     function closePopup() {
