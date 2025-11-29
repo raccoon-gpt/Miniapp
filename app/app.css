@@ -298,7 +298,7 @@ body {
 
     .overlay.visible .popup {
       opacity: 1;
-      transform: scale(1) translateY(-50);
+      transform: scale(1) translateY(-50px);
     }
 
 .popup-image {
