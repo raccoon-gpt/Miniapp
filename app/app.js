@@ -294,13 +294,19 @@ if (copyBtn) {
       "../assets/imagespopup/raccoon_1.png",
       "../assets/imagespopup/raccoon_2.png",
       "../assets/imagespopup/raccoon_3.png",
-/*    "imagespopup/raccoon_4.png",
-      "imagespopup/raccoon_5.png",
-      "imagespopup/raccoon_6.png",
-      "imagespopup/raccoon_7.png",
-      "imagespopup/raccoon_8.png",
-      "imagespopup/raccoon_9.png",
-      "imagespopup/raccoon_10.png"
+      "../assets/imagespopup/raccoon_4.png",
+      "../assets/imagespopup/raccoon_5.png",
+      "../assets/imagespopup/raccoon_6.png",
+      "../assets/imagespopup/raccoon_7.png",
+      "../assets/imagespopup/raccoon_8.png",
+      "../assets/imagespopup/raccoon_9.png",
+      "../assets/imagespopup/raccoon_10.png",
+      "../assets/imagespopup/raccoon_11.png",
+      "../assets/imagespopup/raccoon_12.png",
+      "../assets/imagespopup/raccoon_13.png",
+      "../assets/imagespopup/raccoon_14.png",
+      "../assets/imagespopup/raccoon_15.png",
+/*    "../assets/imagespopup/raccoon_3.png"
 */
       
       // добавляй дальше свои файлы
