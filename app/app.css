@@ -304,7 +304,7 @@ body {
 .popup-image {
       width: 100%;
       height: auto;
-      max-height: 45vh; 
+      max-height: 40vh; 
       border-radius: 18px;
       object-fit: cover;     /* при необходимости подрежет */
       display: block;
