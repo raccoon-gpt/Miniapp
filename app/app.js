@@ -324,11 +324,15 @@ if (copyBtn) {
         popupImage.src = randomSrc;
       }
 
-      overlay.classList.add("visible");
+        overlay.classList.add("visible", "loading");
+
+  setTimeout(() => {
+    overlay.classList.remove("loading");
+  }, 3000);
     }
 
     function closePopup() {
-      overlay.classList.remove("visible");
+      overlay.classList.remove("visible", "loading");
     }
 
     downloadBtn.addEventListener("click", () => {
@@ -354,4 +358,7 @@ if (copyBtn) {
         closePopup();
       }
     });
+
+
+
 
