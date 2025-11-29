@@ -165,9 +165,9 @@ body {
   background: #212121;
   color: #f9fafb;
   font-family: 'Doto', sans-serif;
-  font-weight: 400;   /* 400 обычный */
+  font-weight: 300;   /* 400 обычный */
   padding: 10px 12px;
-  font-size: 36px;
+  font-size: 12px;
   resize: none;
   outline: none;
   margin-bottom: 4px;
