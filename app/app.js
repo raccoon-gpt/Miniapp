@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const BASE_TEXT =
-        'Create now a high quality 3:4 image with a raccoon strictly by the following description:';
+        'Create now a high quality 3:4 image with a small raccoon, integrated into the environment of the background, strictly by the following description:';
 
     // Элементы интерфейса
     const outputEl = document.getElementById('outputText');
