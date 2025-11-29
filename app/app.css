@@ -347,6 +347,7 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 12px;
       
       padding: 8px 4px 2px;
     }
@@ -357,6 +358,8 @@ body {
       font-size: 15px;
       color: #e5e7eb;
       line-height: 1.4;
+
+      padding: 4px 4px 0px;
     }
 
 
