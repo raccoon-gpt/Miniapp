@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Тексты для подписей категорий (можешь править как хочешь)
     const LABEL_TEXTS = {
         style: {
-            '001': 'Реалистичный',
+            'Must be a photorealism 100% image, just like a camera shot': 'Реалистичный',
             '002': 'Комикс',
             '003': 'Неон / синтвейв',
             '004': 'Акварель',
