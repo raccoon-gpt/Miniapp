@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const BASE_TEXT =
-        'Create now a high quality 3:4 image with a small raccoon with a tail, integrated into the environment of the background, strictly by the following description in this whole text. Also,the raccoon must cover under 10% of the image area. Do not place the raccoon in the foreground; keep it visually small and distant within the scene.';
+        'Create now an 3:4 image with a small raccoon with a tail, integrated into the environment of the background, strictly by the following description in this whole text. Also,the raccoon must cover under 20% of the image area. Do not place the raccoon in the foreground; keep it visually small and distant within the scene.';
 
     // Элементы интерфейса
     const outputEl = document.getElementById('outputText');
