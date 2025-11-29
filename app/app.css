@@ -164,7 +164,7 @@ body {
   border: 1px solid #374151;
   background: #212121;
   color: #f9fafb;
-  font-family: 'Doto';
+  font-family: "Doto", sans-serif;
   padding: 10px 12px;
   font-size: 10px;
   resize: none;
