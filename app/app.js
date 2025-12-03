@@ -189,8 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- ИНИЦИАЛИЗАЦИЯ ---
 
-    // Базовый текст при загрузке
-    setOutputText(BASE_TEXT);
+// Базовый текст при загрузке (верх + низ)
+rebuildText();
 
     // Вешаем обработчик на все картинки-опции
     document.querySelectorAll('.option-image').forEach((img) => {
