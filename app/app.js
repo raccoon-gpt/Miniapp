@@ -115,6 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Пустые строки между абзацами
     const fullText = paragraphs.join('\n\n');
     setOutputText(fullText);
+        
+            // Чтобы всегда показывать верх
+    if (outputEl) {
+        outputEl.scrollTop = 0;
+    }
     }
 
     function rebuildSelectedImages() {
