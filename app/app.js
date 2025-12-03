@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Create now an 3:4 image with a raccoon with a tail, integrated into the far midground environment of the background, strictly by the following description in this whole text. Also, the raccoon must cover 30% - 40% of the image area. Do not place the raccoon in the close foreground; keep it visually distant within the scene.';
 
     const BASE_TEXT_BOTTOM =
-    'Create llowing description';
+    'The color, palette, and tone shades of the background must not blend into the raccoon’s own coloring or turn the image into a single-tone composition. The raccoon’s fur must not be painted in the background’s colors. On the contrary, the raccoon and the background should look harmonious and natural together. The raccoon’s fur may catch color, highlights, light, and subtle tints only on the very tips of the fur. Do NOT place the raccoon in the foreground. Keep the raccoon small, integrated into the environment, not dominating the frame.';
 
     
     // Элементы интерфейса
