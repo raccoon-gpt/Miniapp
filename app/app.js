@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const LABEL_TEXTS = {
         style: {
             '001': 'Реалистичный',
-            '002': 'Взъерошеная шерсть / арт',
-            '003': 'Аккуратная шерсть / арт',
+            '002': 'Лохматый арт',
+            '003': 'Гладкошорстный арт',
             '004': 'Акварель',
             '005': 'Масляная живопись'
         },
@@ -98,21 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function rebuildText() {
         const paragraphs = [];
+    // 1. ВСЕГДА ВЕРХНИЙ СТАТИЧЕСКИЙ ТЕКСТ
+    paragraphs.push(BASE_TEXT_TOP);
 
-        // Базовый текст всегда первым
-        paragraphs.push(BASE_TEXT);
+    // 2. ДИНАМИЧЕСКИЕ АБЗАЦЫ ПО КАТЕГОРИЯМ
+    Object.keys(selectedByCategory).forEach((category) => {
+        const item = selectedByCategory[category];
+        if (item && item.text) {
+            paragraphs.push(item.text);
+        }
+    });
 
-        // Остальные абзацы идут по категориям
-        Object.keys(selectedByCategory).forEach((category) => {
-            const item = selectedByCategory[category];
-            if (item && item.text) {
-                paragraphs.push(item.text);
-            }
-        });
+    // 3. ВСЕГДА НИЖНИЙ СТАТИЧЕСКИЙ ТЕКСТ
+    paragraphs.push(BASE_TEXT_BOTTOM);
 
-        // Пустая строка между абзацами
-        const fullText = paragraphs.join('\n\n');
-        setOutputText(fullText);
+    // Пустые строки между абзацами
+    const fullText = paragraphs.join('\n\n');
+    setOutputText(fullText);
     }
 
     function rebuildSelectedImages() {
