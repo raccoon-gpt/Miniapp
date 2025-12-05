@@ -161,8 +161,8 @@ body {
 
 .output-text {
   width: 100%;
-  min-height: 80px;
-  max-height: 80px;
+  min-height: 70px;
+  max-height: 70px;
   border-radius: 12px;
   border: 1px solid #374151;
   background: #1c2530;
