@@ -147,7 +147,7 @@ body {
   background: linear-gradient(
     to top,
     #050505 60%,
-    rgba(5, 5, 5, 0.98)
+    rgba(5, 5, 5, 0.4)
   );
   border-top: 10px solid #262626;
   backdrop-filter: blur(10px);
