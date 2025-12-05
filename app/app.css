@@ -138,7 +138,7 @@ body {
 
 .output-section {
   border-radius: 12px;
-  border: 1px solid #374151;
+  border: 10px solid #374151;
   position: sticky;
   bottom: 0;
   left: 40px;
