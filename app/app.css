@@ -90,7 +90,7 @@ body {
   margin-left: 8px;
   font-size: 14px;
   font-weight: 400;
-  color: #3b82f6;          /* такой же оттенок, как обводка */
+  color: #fd4825;          /*#3b82f6 такой же оттенок, как обводка у активной картинки */
   opacity: 0.9;
 }
 
@@ -130,8 +130,8 @@ body {
 /* активная картинка — КЛАСС active (совпадает с JS) */
 
 .option-image.active {
-    border: 1px solid #3b82f6;
-    box-shadow: 0 0 4px #3b82f6; /* вместо 1px spread */
+    border: 1px solid #fd4825;
+    box-shadow: 0 0 4px #fd4825; /* вместо 1px spread */
 }
 
 /* НИЖНЯЯ ПАНЕЛЬ — ВСЕГДА ВИДНА */
@@ -215,7 +215,7 @@ body {
 
 .btn.primary {
   background: #2563eb;
-  color: #f9fafb;
+  color: #fd4825;  /* #f9fafb */
   font-family: 'Rubik', sans-serif;
 }
 
