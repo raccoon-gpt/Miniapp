@@ -222,7 +222,7 @@ body {
 .btn.ghost {
   background: transparent;
   color: #e5e7eb;
-  border: 1px solid #F0EEE9;
+  border: 0.5px solid #F0EEE9;
   font-family: 'Rubik', sans-serif;
 }
 
