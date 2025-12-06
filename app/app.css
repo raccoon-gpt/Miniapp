@@ -14,7 +14,7 @@ body {
 body {
     font-family: 'Rubik', sans-serif;
     background: #050505;
-    color: #f9fafb;
+    color: #F0EEE9;
 }
 
 /*
@@ -165,7 +165,7 @@ body {
   max-height: 70px;
   border-radius: 12px;
   border: 1px solid #374151;
-  background: #1c2530;
+  background: #302f2e;
   color: #f9fafb;
   font-family: 'Doto', sans-serif;
   font-weight: 200;   /* 400 обычный */
