@@ -214,8 +214,8 @@ body {
 }
 
 .btn.primary {
-  background: #2563eb;
-  color: #fd4825;  /* #f9fafb */
+  background: #fd4825;   /* #2563eb */
+  color: #050505;  /* #f9fafb */
   font-family: 'Rubik', sans-serif;
 }
 
