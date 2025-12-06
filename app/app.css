@@ -214,15 +214,15 @@ body {
 }
 
 .btn.primary {
-  background: #fd4825;   /* #2563eb */
-  color: #050505;  /* #f9fafb */
+  background: #ca391d;   /* #2563eb */
+  color: #F0EEE9;  /* #f9fafb */
   font-family: 'Rubik', sans-serif;
 }
 
 .btn.ghost {
   background: transparent;
   color: #e5e7eb;
-  border: 1px solid #4b5563;
+  border: 1px solid #F0EEE9;
   font-family: 'Rubik', sans-serif;
 }
 
